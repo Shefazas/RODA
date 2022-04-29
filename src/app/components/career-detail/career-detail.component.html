@@ -1,0 +1,123 @@
+<!-- ------------------------------abt start------------------------------ -->
+<section class="inner_bnr" style="background-image: url('assets/img/inner-bnr10.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+        <h1 class="text-center">Career Details</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+            <li class="breadcrumb-item  text-white"><a routerLink="/career" class="blue_clr text-white">Career</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Career Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ------------------------------abt end------------------------------ -->
+<!-- ---------------------------career detail start--------------------------- -->
+<section class="career_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3 my-md-3 abt_col">
+        <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">{{job?.title}}</h3>
+        <h4 class="font-weight-bold blr_color" *ngIf="job?.description">Job Description</h4>
+        <p style="white-space: pre-line;">{{job?.description}}</p>
+        <h4 class="font-weight-bold blr_color" *ngIf="job?.responsibilities">Roles & Responsibilities:</h4>
+        <p style="white-space: pre-line;">{{job?.responsibilities}}</p>
+        <ul class="cm_ul">
+          <li *ngIf="job?.rp1">{{job.rp1}}</li>
+          <li *ngIf="job?.rp2">{{job.rp2}}</li>
+          <li *ngIf="job?.rp3">{{job.rp3}}</li>
+          <li *ngIf="job?.rp4">{{job.rp4}}</li>
+        </ul>
+        <h4 class="font-weight-bold blr_color" *ngIf="job?.qualification">Qualifications:</h4>
+        <p style="white-space: pre-line;">{{job?.qualification}}</p>
+        <h4 class="font-weight-bold blr_color" *ngIf="job?.Experience_requirements">Experience Requirements:</h4>
+        <p style="white-space: pre-line;">{{job?.Experience_requirements}}</p>
+        <ul class="cm_ul">
+          <li *ngIf="job?.er1">{{job.er1}}</li>
+          <li *ngIf="job?.er2">{{job.er2}}</li>
+          <!-- <li *ngIf="job?.er3">{{job.er3}}</li>
+          <li *ngIf="job?.er4">{{job.er4}}</li> -->
+        </ul>
+        <h4 class="font-weight-bold blr_color" *ngIf="job?.er3">Work Location:</h4>
+        <p style="white-space: pre-line;">{{job?.er3}}</p>
+        <h4 class="font-weight-bold blr_color" *ngIf="job?.er4">Salary:</h4>
+        <p style="white-space: pre-line;">{{job?.er4}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3 my-md-3 abt_col">
+        <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">Apply For Job</h3>
+        <form [formGroup]="userForm">
+          <div class="form-row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group">
+              <input type="text" class="form-control" placeholder="Enter your name" formControlName="name"
+                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group">
+              <input type="text" class="form-control" placeholder="Email address" formControlName="email"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group">
+              <div class="d-flex" style="flex-flow: wrap;">
+              <input type="text" class="form-control w-75" placeholder="Phone" formControlName="mobile"
+                [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="sendOTP()">OTP</button>
+              <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                <div *ngIf="f.mobile.errors.required">Phone number is required</div>
+                <div *ngIf="f.mobile.errors.pattern">Phone number must be valid</div>
+              </div>
+            </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group" *ngIf="otpfield">
+              <div class="d-flex" style="flex-flow: wrap;">
+                <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                  style="flex-grow:2">
+                <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="Verify()">Verify</button>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group">
+              <select class="form-control" placeholder="Job Category" formControlName="career_category"
+                [ngClass]="{ 'is-invalid': submitted && f.career_category.errors }">
+                <option value="">Job Category</option>
+                <option *ngFor="let job of jobList" [value]="job.id">{{job.title}}</option>
+              </select>
+              <div *ngIf="submitted && f.career_category.errors" class="invalid-feedback">
+                <div *ngIf="f.career_category.errors.required">Select a job</div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group" *ngIf="otpfield">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group">
+              <input type="file" class="form-control-file" formControlName="file" (change)="onFileChanged($event)"
+                [ngClass]="{ 'is-invalid': submitted && f.file.errors }">
+              <div *ngIf="submitted && f.file.errors" class="invalid-feedback">
+                <div *ngIf="f.file.errors.required">Insert CV/Resume</div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 form-group text-right">
+              <a class="btn btn_bnr_red my-3 my-md-3 text-white" role="button" (click)="onSubmit()"
+                *ngIf="!response && applyButton">Apply Now</a>  
+                <button class="btn btn_bnr_red my-3 my-md-3 text-white" role="button"
+                *ngIf="!response && !applyButton" disabled>Apply Now</button>
+                <div class="alert my-3 my-md-3 text-center" *ngIf="response==true">
+                  <strong>Applied Successfully!</strong>
+                </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ---------------------------career detail end--------------------------- -->

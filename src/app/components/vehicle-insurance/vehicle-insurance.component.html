@@ -1,0 +1,321 @@
+<!-- ------------------------------abt start------------------------------ -->
+<section class="inner_bnr" style="background-image: url('assets/img/inner-bnr9.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+        <h1 class="text-center">Vehicle Insurance</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Vehicle Insurance</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ------------------------------abt end------------------------------ -->
+<!-- -----------------------------product inner sec start----------------------------- -->
+<section class="pdd_bg_sec">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12 col-12 my-3 pdd_img_col">
+        <img src="assets/img/vinsurance.jpg" class="img-fluid pd_inner_image" alt="video image">
+      </div>
+      <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12 col-12 my-3 pdd_text_col">
+        <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">Vehicle Insurance</h3>
+        <p>Motor insurance is an insurance policy for four-wheelers, commercial trucks, two-wheelers, and other road
+          vehicles. Motor insurance online provides financial protection against physical damage or cover for natural
+          calamities and any loss or damages sustained by the policyholder in an unforeseen accident. </p>
+        <p>Motor insurance is
+          mandatory for all two-wheeler and four-wheeler vehicles such as cars, bikes, scooters, trucks that are plying
+          on the roads in India. Vehicle owners can avail motor insurance even for commercial vehicles as well.</p>
+        <p>Car Insurance gives coverage against accidental loss or damages to own car or a third party. While choosing a
+          car insurance policy, a person should always compare the premium offered by various insurers to ensure that he
+          got the best deal. The amount of premium would depend on the make & value of the car, state from where it is
+          registered and the manufacturing year.</p>
+        <p>Two Wheeler Insurance or bike insurance provides protection to bikes and scooters. It covers two wheeler
+          vehicles against any own damages as well as any accidental loss caused to third party property or person.
+          Similar to car insurance, the premium of a two-wheeler policy depends on the age of the bike, its make &
+          model, registration year, etc.</p>
+        <p>Commercial vehicle insurance helps all commercial vehicle drivers to reduce losses they might incur due to
+          damage to their vehicle. Here commercial vehicles include those that are not used for personal purposes, like
+          goods carrying vehicles, trucks, etc.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -----------------------------product inner sec end----------------------------- -->
+<!-- ----------------------------------service start---------------------------------- -->
+<section class="page_bg">
+  <div class="container">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">Motor Policy</h3>
+    <div class="row justify-content-center">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card form_card">
+          <div class="card-body">
+            <ul class="nav nav-pills mb-3 custom_nav_pill" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-new-vehicle-tab" data-toggle="pill" href="#pills-new-vehicle"
+                  role="tab" aria-controls="pills-new-vehicle" aria-selected="true">
+                  New Vehicle Policy
+                </a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-renewal-tab" data-toggle="pill" href="#pills-renewal" role="tab"
+                  aria-controls="pills-renewal" aria-selected="false">
+                  Other Insurer Renewal
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-new-vehicle" role="tabpanel"
+                aria-labelledby="pills-new-vehicle-tab">
+                <form [formGroup]="newPolicyForm">
+                  <div class="form-row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                        <input type="text" class="form-control w-75" placeholder="Mobile No*"
+                          formControlName="mobileNumber"
+                          [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }"
+                          style="flex-grow:2">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="sendOTPNew()">OTP</button>
+                        <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                          <div *ngIf="f.mobileNumber.errors.required">Required field</div>
+                          <div *ngIf="f.mobileNumber.errors.pattern">Phone number must be valid</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3" *ngIf="otpfield">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                        <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                          style="flex-grow:2">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="verifyNew()">Verify</button>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Email ID*" formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Required field</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Registration State*"
+                        formControlName="regState" [ngClass]="{ 'is-invalid': submitted && f.regState.errors }">
+                      <div *ngIf="submitted && f.regState.errors" class="invalid-feedback">
+                        <div *ngIf="f.regState.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Manufacturer*" formControlName="manufacturer"
+                        [ngClass]="{ 'is-invalid': submitted && f.manufacturer.errors }">
+                      <div *ngIf="submitted && f.manufacturer.errors" class="invalid-feedback">
+                        <div *ngIf="f.manufacturer.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Model*" formControlName="model"
+                        [ngClass]="{ 'is-invalid': submitted && f.model.errors }">
+                      <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                        <div *ngIf="f.model.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Fuel Type*" formControlName="fuelType"
+                        [ngClass]="{ 'is-invalid': submitted && f.fuelType.errors }">
+                      <div *ngIf="submitted && f.fuelType.errors" class="invalid-feedback">
+                        <div *ngIf="f.fuelType.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Make Year*" formControlName="makeYear"
+                        maxlength="4" (keypress)="numberOnly($event)"
+                        [ngClass]="{ 'is-invalid': submitted && f.makeYear.errors }">
+                      <div *ngIf="submitted && f.makeYear.errors" class="invalid-feedback">
+                        <div *ngIf="f.makeYear.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="RTO Name*" formControlName="rtoName"
+                        [ngClass]="{ 'is-invalid': submitted && f.rtoName.errors }">
+                      <div *ngIf="submitted && f.rtoName.errors" class="invalid-feedback">
+                        <div *ngIf="f.rtoName.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                        <input type="text" class="form-control" placeholder="IDV*">
+                      </div> -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Make Month*" formControlName="makeMonth"
+                        [ngClass]="{ 'is-invalid': submitted && f.makeMonth.errors }">
+                      <div *ngIf="submitted && f.makeMonth.errors" class="invalid-feedback">
+                        <div *ngIf="f.makeMonth.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="date" class="form-control" placeholder="Date of Registration*" formControlName="date"
+                        [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
+                      <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                        <div *ngIf="f.date.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <label class="mr-3">Vehicle Class*</label>
+                      <div class="custom-control custom-radio custom-control-inline radio1"
+                        *ngFor="let item of vehicleList;">
+                        <input #radio type="radio" [id]="'RadioInline1'+item.id" [value]="item.id"
+                          class="custom-control-input" formControlName="vehicleClass" checked
+                          [ngClass]="{ 'is-invalid': submitted && f.vehicleClass.errors }">
+                        <label class="custom-control-label" for="RadioInline1" [class.radio1--checked]="radio.checked"
+                          [for]="'RadioInline1'+item.id">{{item.type}}</label>
+                      </div>
+                      <div *ngIf="submitted && f.vehicleClass.errors" class="invalid-feedback">
+                        <div *ngIf="f.vehicleClass.errors.required">Required field</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center">
+                      <button type="button" class="btn btn_bnr text-uppercase mt-2 w-50 "
+                        (click)="onCancel()">Cancel</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="!newResponse && applyButton">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-50" (click)="onSubmitNew()">Apply</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="!newResponse && !applyButton">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-50" disabled>Apply</button>
+                    </div>
+                    <div class="alert col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="newResponse">
+                      <strong>Applied Successfully!</strong>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="pills-renewal" role="tabpanel" aria-labelledby="pills-renewal-tab">
+                <form [formGroup]="otherRenewalForm">
+                  <div class="form-row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="First Name*" formControlName="firstName"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.firstName.errors }">
+                      <div *ngIf="submitted2 && s.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="s.firstName.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Last Name*" formControlName="lastName"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.lastName.errors }">
+                      <div *ngIf="submitted2 && s.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="s.lastName.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                        <input type="text" class="form-control w-75" placeholder="Mobile No*"
+                          formControlName="mobileNumber"
+                          [ngClass]="{ 'is-invalid': submitted2 && s.mobileNumber.errors }"
+                          style="flex-grow:2">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="sendOTPRenew()">OTP</button>
+                        <div *ngIf="submitted2 && s.mobileNumber.errors" class="invalid-feedback">
+                          <div *ngIf="s.mobileNumber.errors.required">Required field</div>
+                          <div *ngIf="s.mobileNumber.errors.pattern">Phone number must be valid</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3" *ngIf="otpfield2">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                        <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                          style="flex-grow:2">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="verifyRenew()">Verify</button>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Email ID*" formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.email.errors }">
+                      <div *ngIf="submitted2 && s.email.errors" class="invalid-feedback">
+                        <div *ngIf="s.email.errors.required">Required field</div>
+                        <div *ngIf="s.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Vehicle Registration No*"
+                        formControlName="vehicleRegNo" oninput="this.value = this.value.toUpperCase()"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.vehicleRegNo.errors }">
+                      <div *ngIf="submitted2 && s.vehicleRegNo.errors" class="invalid-feedback">
+                        <div *ngIf="s.vehicleRegNo.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <input type="text" class="form-control" placeholder="Chassis Number*" formControlName="chassisNo"
+                        oninput="this.value = this.value.toUpperCase()"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.chassisNo.errors }">
+                      <div *ngIf="submitted2 && s.chassisNo.errors" class="invalid-feedback">
+                        <div *ngIf="s.chassisNo.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                      <label class="mr-3">Vehicle Class*</label>
+                      <div class="custom-control custom-radio custom-control-inline radio2"
+                        *ngFor="let item of vehicleList">
+                        <input #radio type="radio" [id]="'RadioInline3'+item.id" [value]="item.id"
+                          name="vehicleClassOther" class="custom-control-input" formControlName="vehicleClassOther"
+                          [ngClass]="{ 'is-invalid': submitted2 && s.vehicleClassOther.errors }">
+                        <label class="custom-control-label" [class.radio2--checked]="radio.checked"
+                          [for]="'RadioInline3'+item.id">{{item.type}}</label>
+                      </div>
+                      <div *ngIf="submitted2 && s.vehicleClassOther.errors" class="invalid-feedback">
+                        <div *ngIf="s.vehicleClassOther.errors.required">Required field</div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_col my-3">
+                        <p>Please select any one of the below options*</p>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                           I provide authorization to access my Digilocker account to fetch RC document.(Applicable for DigiLocker account holder)
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                          <label class="form-check-label" for="defaultCheck2">
+                           I provide consent to access the RC document from Ministry of Road Transport and Highways.
+                          </label>
+                        </div>
+                      </div> -->
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center">
+                      <button type="button" class="btn btn_bnr text-uppercase mt-2 w-50 "
+                        (click)="onCancel()">Cancel</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="!renewalResponse && applyButton2">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-50 " (click)="onSubmitRenew()">Apply</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="!renewalResponse && !applyButton2">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-50 " disabled>Apply</button>
+                    </div>
+                    <div class="alert col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="renewalResponse">
+                      <strong>Applied Successfully!</strong>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ----------------------------------service end---------------------------------- -->

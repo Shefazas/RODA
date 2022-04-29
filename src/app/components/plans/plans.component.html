@@ -1,0 +1,410 @@
+<!-- ------------------------------commn start------------------------------ -->
+<section class="inner_bnr" style="background-image: url('assets/img/inner-bnr.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+        <h1 class="text-center">Pricing Plan</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Pricing Plan</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ------------------------------commn end------------------------------ -->
+
+<!-- -------------------------------pricing plan start------------------------------- -->
+<section class="pricing_bg">
+  <div class="container">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-3 text-center">Get Your Plan Here.</h3>
+    <div class="row justify-content-center">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-5 pricing_col text-center">
+        <div class="pricing_card card">
+          <div class="card-body">
+            <img src="assets/img/car-prc.png" class="img-fluid mb-3" alt="plan icon">
+            <h4 class="font-weight-bold">Four Wheeler's Plan</h4>
+            <!-- <h5 class="price_size">&#8377; 1999.00*</h5> -->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-top-0">Coverage Limits(in kms)
+                <span class="badge badge-clr badge-pill">Unlimited
+                </span>
+              </li>
+              <li class="list-group-item">Breakdown support over phone
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">On site preliminary support
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Fuel delivery (only petrol/diesel)
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Cost of fuel (only petrol/diesel)
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Emptying of Fuel bank
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Flat Tyre Support
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Battery jumpstart
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Replacement/lost key
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Locked keys
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Transfer/Towing for Mech. Elec. breakdowns
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Transfer/Towing for accidental Breakdowns
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Relay of urgent messages
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Mediphone
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Medical co-ordination
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Coverage extension to next owner
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+            </ul>
+            <p class="mb-0 mt-2 text-center"><small>Conditions applicable*</small></p>
+            <button type="button" class="btn btn_bnr_red text-uppercase mt-2 w-100" data-toggle="modal"
+              data-target="#vo-sg-up">Get Quote</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="vo-sg-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLongTitle">Get Quote</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="planForm" novalidate>
+                <div class="form-row align-items-center">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="name" placeholder="Name*"
+                      [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                      <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="email" placeholder="E-mail*"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">E-mail is required</div>
+                      <div *ngIf="f.email.errors.pattern">E-mail must be valid</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control form-ht w-75" formControlName="phone" placeholder="Phone*"
+                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                      <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="sendOTP()">OTP</button>
+                      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                        <div *ngIf="f.phone.errors.pattern">Phone number must be valid</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group"
+                    *ngIf="otpfield">
+                    <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                        style="flex-grow:2">
+                      <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="Verify()">Verify</button>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="vehicleBrand"
+                      placeholder="Vehicle Brand*" [ngClass]="{ 'is-invalid': submitted && f.vehicleBrand.errors }" />
+                    <div *ngIf="submitted && f.vehicleBrand.errors" class="invalid-feedback">
+                      <div *ngIf="f.vehicleBrand.errors.required">Vehicle Brand is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="model" placeholder="Model*"
+                      [ngClass]="{ 'is-invalid': submitted && f.model.errors }" />
+                    <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                      <div *ngIf="f.model.errors.required">Model is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="year" placeholder="Year*"
+                      [ngClass]="{ 'is-invalid': submitted && f.year.errors }" />
+                    <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+                      <div *ngIf="f.year.errors.required">Year is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="chassisNumber"
+                      placeholder="Chassis Number" />
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <select class="form-control form-ht" aria-label="Disabled select example" disabled>
+                      <option selected>Four Wheeler's Plan (Selected)</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="btn btn_bnr_red text-uppercase mt-2 w-100" type="submit" (click)="onSubmit(0)"
+                  *ngIf="!response && applyButton">Submit</button>
+                <button class="btn btn_bnr_red text-uppercase mt-2 w-100" type="submit"
+                  *ngIf="!response && !applyButton" disabled>Submit</button>
+                <div class="alert btn btn_common w-100 my-3 text-center" *ngIf="response==true">
+                  <strong>Successful. We'll get back to you soon!</strong>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal ends -->
+
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-5 pricing_col text-center">
+        <div class="pricing_card card">
+          <div class="card-body">
+            <img src="assets/img/bike-prc.png" class="img-fluid mb-3" alt="plan icon">
+            <h4 class="font-weight-bold">Two Wheeler's Plan</h4>
+            <!-- <h5 class="price_size">&#8377; 699.00*</h5> -->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-top-0">Coverage Limits(in kms)
+                <span class="badge badge-clr badge-pill">Unlimited
+                </span>
+              </li>
+              <li class="list-group-item">Breakdown support over phone
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">On site preliminary support
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Fuel delivery (only petrol/diesel)
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Cost of fuel (only petrol/diesel)
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Emptying of Fuel bank
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Flat Tyre Support
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Battery jumpstart
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Replacement/lost key
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Locked keys
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Transfer/Towing for Mech. Elec. breakdowns
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Transfer/Towing for accidental Breakdowns
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Relay of urgent messages
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Mediphone
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Medical co-ordination
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+
+              <li class="list-group-item">Coverage extension to next owner
+                <span class="badge badge-clr badge-pill"><i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+              </li>
+            </ul>
+            <p class="mb-0 mt-2 text-center"><small>Conditions applicable*</small></p>
+
+            <button type="button" class="btn btn_bnr_red text-uppercase mt-2 w-100" data-toggle="modal"
+              data-target="#two-wheeler">Get Quote</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="two-wheeler" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLongTitle">Get Quote</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="planForm" novalidate>
+                <div class="form-row align-items-center">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="name" placeholder="Name*"
+                      [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                      <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="email" placeholder="E-mail*"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">E-mail is required</div>
+                      <div *ngIf="f.email.errors.pattern">E-mail must be valid</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control form-ht w-75" formControlName="phone" placeholder="Phone*"
+                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" style="flex-grow:2" />
+                      <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="sendOTP()">OTP</button>
+                      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                        <div *ngIf="f.phone.errors.pattern">Phone number must be valid</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group"
+                    *ngIf="otpfield">
+                    <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control form-ht w-75" placeholder="Enter OTP" formControlName="otp"
+                        style="flex-grow:2">
+                      <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="Verify()">Verify</button>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="vehicleBrand"
+                      placeholder="Vehicle Brand*" [ngClass]="{ 'is-invalid': submitted && f.vehicleBrand.errors }" />
+                    <div *ngIf="submitted && f.vehicleBrand.errors" class="invalid-feedback">
+                      <div *ngIf="f.vehicleBrand.errors.required">Vehicle Brand is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="model" placeholder="Model*"
+                      [ngClass]="{ 'is-invalid': submitted && f.model.errors }" />
+                    <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                      <div *ngIf="f.model.errors.required">Model is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="year" placeholder="Year*"
+                      [ngClass]="{ 'is-invalid': submitted && f.year.errors }" />
+                    <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+                      <div *ngIf="f.year.errors.required">Year is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <input type="text" class="form-control form-ht" formControlName="chassisNumber"
+                      placeholder="Chassis Number" />
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3 form-group">
+                    <select class="form-control form-ht" aria-label="Disabled select example" disabled>
+                      <option selected>Two Wheeler's Plan (Selected)</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="btn btn_bnr_red text-uppercase mt-2 w-100" type="submit" (click)="onSubmit(0)"
+                  *ngIf="!response && applyButton">Submit</button>
+                <button class="btn btn_bnr_red text-uppercase mt-2 w-100" type="submit" disabled
+                  *ngIf="!response && !applyButton">Submit</button>
+                <div class="alert btn btn_common w-100 my-3 text-center" *ngIf="response==true">
+                  <strong>Successful. We'll get back to you soon!</strong>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+<!-- -------------------------------pricing plan end------------------------------- -->

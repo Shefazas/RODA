@@ -1,13 +1,144 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>RODA</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <base href="/">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+    <title>Roda Assistance Private Limited</title>
+  </head>
+  <body>
+
+<app-root></app-root>
+
+
+    <!-- -------------------------------------footer end------------------------------------- -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    
+    <script>
+    AOS.init({
+    duration: 1200,
+    })
+    </script>
+    <script>
+    (function ($) {
+    $.fn.countTo = function (options) {
+    options = options || {};
+    
+    return $(this).each(function () {
+    // set options for current element
+    var settings = $.extend({}, $.fn.countTo.defaults, {
+    from:            $(this).data('from'),
+    to:              $(this).data('to'),
+    speed:           $(this).data('speed'),
+    refreshInterval: $(this).data('refresh-interval'),
+    decimals:        $(this).data('decimals')
+    }, options);
+    
+    // how many times to update the value, and how much to increment the value on each update
+    var loops = Math.ceil(settings.speed / settings.refreshInterval),
+    increment = (settings.to - settings.from) / loops;
+    
+    // references & variables that will change with each update
+    var self = this,
+    $self = $(this),
+    loopCount = 0,
+    value = settings.from,
+    data = $self.data('countTo') || {};
+    
+    $self.data('countTo', data);
+    
+    // if an existing interval can be found, clear it first
+    if (data.interval) {
+    clearInterval(data.interval);
+    }
+    data.interval = setInterval(updateTimer, settings.refreshInterval);
+    
+    // initialize the element with the starting value
+    render(value);
+    
+    function updateTimer() {
+    value += increment;
+    loopCount++;
+    
+    render(value);
+    
+    if (typeof(settings.onUpdate) == 'function') {
+    settings.onUpdate.call(self, value);
+    }
+    
+    if (loopCount >= loops) {
+    // remove the interval
+    $self.removeData('countTo');
+    clearInterval(data.interval);
+    value = settings.to;
+    
+    if (typeof(settings.onComplete) == 'function') {
+    settings.onComplete.call(self, value);
+    }
+    }
+    }
+    
+    function render(value) {
+    var formattedValue = settings.formatter.call(self, value, settings);
+    $self.html(formattedValue);
+    }
+    });
+    };
+    
+    $.fn.countTo.defaults = {
+    from: 0,               // the number the element should start at
+    to: 0,                 // the number the element should end at
+    speed: 1000,           // how long it should take to count between the target numbers
+    refreshInterval: 100,  // how often the element should be updated
+    decimals: 0,           // the number of decimal places to show
+    formatter: formatter,  // handler for formatting the value before rendering
+    onUpdate: null,        // callback method for every time the element is updated
+    onComplete: null       // callback method for when the element finishes updating
+    };
+    
+    function formatter(value, settings) {
+    return value.toFixed(settings.decimals);
+    }
+    }(jQuery));
+    jQuery(function ($) {
+    // custom formatting example
+    $('.count-number').data('countToOptions', {
+    formatter: function (value, options) {
+    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+    });
+    
+    // start all the timers
+    $('.timer').each(count);
+    
+    function count(options) {
+    var $this = $(this);
+    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+    $this.countTo(options);
+    }
+    });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,567 @@
+<!-- ---------------------------banner start--------------------------- -->
+<section class="banner_bg">
+  <img src="assets/img/bnr-circle-left.png" class="img-fluid circle_left d_none" alt="bnr_circle">
+  <img src="assets/img/bnr-circle-right.png" class="img-fluid circle_right d_none" alt="bnr_circle">
+  <div class="container">
+    <div class="row banner_row">
+      <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 banner_col">
+        <div class="w-100 p-3">
+          <owl-carousel-o class="carousel-inner" [options]="bannerOptions">
+            <ng-container class="carousel-item" *ngFor="let slide of banners">
+              <ng-template carouselSlide [id]="slide.id">
+                <div class="item">
+                  <div class="cover">
+                    <div class="header-content">
+                      <div class="line"></div>
+                      <h1 class="hd_font">{{slide.banner_title}} <span class="red_clr">{{slide.banner_title2}}</span>
+                      </h1>
+                      <h4>{{slide.banner_description}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="banner_img_col">
+        <div class="banner_img">
+          <div data-aos="slide-left" data-aos-ease="ease" data-aos-duration="1500" data-aos-delay="800"
+            data-aos-once="true" data-aos-anchor=".banner_bg" class="guide2Description aos-init">
+            <img src="assets/img/van.png" class="img-fluid van_right" width="100%" alt="bnr_van">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ---------------------------banner end--------------------------- -->
+<!-- -------------------24 start --------------------->
+<div class="side_icon">
+  <a href="tel:04847110165">
+    <div class="d-flex align-items-center support_side">
+      <p class="mb-0"><span class="font-weight-bold">24/7 Helpline</span> <br><small>0484-7110165</small></p><img
+        src="assets/img/support.png" class="img-fluid ml-3" alt="support">
+    </div>
+  </a>
+</div>
+<!-- -------------------24 end --------------------->
+<!-------------------------------blog start------------------------------->
+<section class="blog_bg">
+  <img src="assets/img/road-mark.png" class="img-fluid tire_grip" alt="grip image">
+  <div class="container-fluid">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">News And Blogs</h3>
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3 my-md-4">
+        <div class="blog_control mt-4">
+          <div class="control-left  customNavigation hidden-sm hidden-xs mr-3 " (click)="owlCarBlog.prev()">
+            <i class="fa fa-angle-left fa-2x control-icon-left font-weight-light" aria-hidden="true"></i>
+          </div>
+          <div class="control-right  customNavigation hidden-sm hidden-xs" (click)="owlCarBlog.next()">
+            <i class="fa fa-angle-right fa-2x control-icon-right font-weight-light" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div data-aos="fade-left">
+          <owl-carousel-o [options]="blogOptions" id="blog" data-aos="fade-left" #owlCarBlog>
+            <ng-container *ngFor="let blog of blogs">
+              <ng-template carouselSlide>
+                <a [routerLink]="['/blog-detail',blog.id]">
+                  <div class="blog_col my-3 my-md-4">
+                    <div class="blog_card card border-0 bg-transparent">
+                      <img [src]="blog.image" class="img-fluid blog_img" alt="blog img">
+                      <div class="card-body text-center">
+                        <p class="mb-0 text-center">{{blog.main_title}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-------------------------------blog end------------------------------->
+<!-- ----------------------------product start---------------------------- -->
+<section class="prd_bg">
+  <img src="assets/img/dots-bg.png" class="img-fluid prdt_dots" alt="product image">
+  <div class="lg_text">
+    <h4>Products</h4>
+  </div>
+  <div class="container">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">Our Products</h3>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-3">
+        <div class="row prd_row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-3 pd_inner_col" data-aos="zoom-in">
+            <a routerLink="/products">
+              <div class="card prd_card border-0">
+                <div class="card-body">
+                  <img src="assets/img/tow-truck.png" class="prd_icon_clr" alt="product icon">
+                  <img src="assets/img/tow-truck-2.png" class="prd_icon_wht" alt="product icon">
+                  <h5 class=" mb-2 hd_font font-weight-bold">Road Side Assistance</h5>
+                  <p class="mb-0">One of the leading 24/7 roadside assistance service provider for bikes & cars across India.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-3 pd_inner_col" data-aos="zoom-in-up">
+            <a routerLink="/health-insurance">
+              <div class="card prd_card border-0">
+                <div class="card-body">
+                  <img src="assets/img/health-insurance.png" class="prd_icon_clr" alt="product icon">
+                  <img src="assets/img/health-insurance-2.png" class="prd_icon_wht" alt="product icon">
+                  <h5 class=" mb-2 hd_font font-weight-bold">Health Insurance</h5>
+                  <p class="mb-0">Enjoy the benefits of tension free life.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-3 pd_inner_col" data-aos="zoom-in-up">
+            <a routerLink="/vehicle-insurance">
+              <div class="card prd_card border-0">
+                <div class="card-body">
+                  <img src="assets/img/car-insurance.png" class="prd_icon_clr" alt="product icon">
+                  <img src="assets/img/car-insurance-2.png" class="prd_icon_wht" alt="product icon">
+                  <h5 class=" mb-2 hd_font font-weight-bold">Vehicle Insurance</h5>
+                  <p class="mb-0">Choose the right insurance policy from trusted insurers.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-3 pd_inner_col" data-aos="zoom-in">
+            <a routerLink="/used-cars">
+              <div class="card prd_card border-0">
+                <div class="card-body">
+                  <img src="assets/img/car-rental.png" class="prd_icon_clr" alt="product icon">
+                  <img src="assets/img/car-rental-2.png" class="prd_icon_wht" alt="product icon">
+                  <h5 class=" mb-2 hd_font font-weight-bold">Used Cars</h5>
+                  <p class="mb-0">Coming soon</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 vid_col my-3">
+        <div class="vid_bg">
+          <img src="assets/img/pds1.jpg" class="img-fluid vid_lg_img" alt="video image" data-aos="zoom-out-down">
+          <img src="assets/img/pds2.jpg" class="img-fluid vid_sm_img" alt="video image" data-aos="zoom-out-up">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ----------------------------product end---------------------------- -->
+<!-- --------------------------------about start-------------------------------- -->
+<section class="abt_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 abt_col">
+        <div class="abt_card card border-0">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 ab_img_col text-center my-3">
+                <img src="assets/img/abt_img4.jpg" class="img-fluid abt_img" alt="img abt" data-aos="zoom-in-up">
+              </div>
+              <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ab_text_col my-3">
+                <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2 text-white">About Us</h3>
+                <p class="text-white">Our story began in 2016. We started on road repair services, making every best
+                  possible effort to make the vehicle roadworthy as soon as possible. We offered 24*7 helpline,
+                  breakdown services, and roadside assistance across India for those who want to have peace of mind from
+                  unseen breakdowns that occur in their vehicle. </p>
+                <p class="mb-0 text-white">Today we are a team of well trained alarm centre executives who are immediate
+                  and considerate in approach and are backed with world class tools and technology. We have a dedicated
+                  24 x 7 Service Team for all your service and support requirements.</p>
+                <p class="mb-0 text-white">Along with Roadside Assistance we are now expanded to Aviation
+                  Service ,Trading and distribution Business …</p>
+                <button type="button" class="btn btn_bnr text-uppercase mt-2" routerLink="/about" (click)="refresh()">Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- --------------------------------about end-------------------------------- -->
+<!-- ------------------------------ads sction start------------------------------ -->
+<section class="ads_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ads_col my-3 my-md-3">
+        <div class="ads_card">
+          <img src="assets/img/ads1.jpg" class="img-fluid" width="100%" alt="ads img">
+          <div class="overlay_ads">
+            <h4 class="mb-0 font-weight-bold">Become A Vendor</h4>
+            <p class="mb-0">Take advantage of this team to grow your sales, and make new<br> connections in your space.
+            </p>
+            <button type="button" class="btn btn_bnr_red text-uppercase mt-2" data-toggle="modal"
+              data-target=".bd-example-modal-lg">Proceed</button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------------vendor form start---------------------------------- -->
+      <!-- Large modal -->
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="row justify-content-center modal-dialog modal-lg">
+          <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 contact_fm_col modal-content modal-lg">
+            <div class="card form_card">
+              <div class="card-body">
+                <div class="closebtn">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClose()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-1">Become A Vendor</h3>
+                <form [formGroup]="vendorForm">
+                  <div class="form-row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-2">
+                      <input type="text" class="form-control" placeholder="Enter your name" formControlName="vendorName"
+                        [ngClass]="{ 'is-invalid': submitted && f.vendorName.errors }" />
+                      <div *ngIf="submitted && f.vendorName.errors" class="invalid-feedback">
+                        <div *ngIf="f.vendorName.errors.required">Name is required</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-2">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control w-75" placeholder="Enter phone number"
+                        formControlName="vendorPhone" maxlength="15"
+                        [ngClass]="{ 'is-invalid': submitted  && f.vendorPhone.errors }" />
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="sendOTPVendor()">OTP</button>
+                      <div *ngIf="submitted && f.vendorPhone.errors" class="invalid-feedback">
+                        <div *ngIf="f.vendorPhone.errors.required">Phone number is required</div>
+                        <div *ngIf="f.vendorPhone.errors.pattern">Phone number must be valid</div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3" *ngIf="otpfield">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                        <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                          style="flex-grow:2">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="verifyVendor()">Verify</button>
+                      </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-2">
+                      <input type="text" class="form-control" placeholder="Enter email address"
+                        formControlName="vendorEmail" [ngClass]="{ 'is-invalid': submitted && f.vendorEmail.errors }" />
+                      <div *ngIf="submitted && f.vendorEmail.errors" class="invalid-feedback">
+                        <div *ngIf="f.vendorEmail.errors.required">Email is required</div>
+                        <div *ngIf="f.vendorEmail.errors.email">Email must be a valid email address</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Company address"
+                        rows="5" formControlName="vendorAddress"
+                        [ngClass]="{ 'is-invalid': submitted && f.vendorAddress.errors }"></textarea>
+                      <div *ngIf="submitted && f.vendorAddress.errors" class="invalid-feedback">
+                        <div *ngIf="f.vendorAddress.errors.required">Company Address is required</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter message"
+                        rows="5" formControlName="vendorMessage"></textarea>
+                    </div>
+                    <div class="alert col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="vendorResponse==true">
+                      <strong>Success!</strong> Email has been sent. We will get back to you soon!
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2 form-group"
+                      *ngIf="!vendorResponse && applyButton">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-100" (click)="onVendorSubmit()">Submit</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2 form-group"
+                      *ngIf="!vendorResponse && !applyButton">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-100" disabled>Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------------vendor form end---------------------------------- -->
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ads_col my-3 my-md-3">
+        <div class="ads_card">
+          <img src="assets/img/ads2.jpg" class="img-fluid" width="100%" alt="ads img">
+          <div class="overlay_ads">
+            <h4 class="mb-0 font-weight-bold">Become An Authorised Seller</h4>
+            <p class="mb-0">Join the team and explore the world of opportunities with us.</p>
+            <button type="button" class="btn btn_bnr_red text-uppercase mt-2" data-toggle="modal"
+              data-target=".bd-example-modal-lg1">Proceed</button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------------seller form start---------------------------------- -->
+      <!-- Large modal -->
+      <div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="row justify-content-center modal-dialog modal-lg">
+          <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 contact_fm_col modal-content modal-lg">
+            <div class="card form_card">
+              <div class="card-body">
+                <div class="closebtn">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClose()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">Become An Authorised Seller</h3>
+                <form [formGroup]="sellerForm">
+                  <div class="form-row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-2">
+                      <input type="text" class="form-control" placeholder="Enter your name" formControlName="sellerName"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.sellerName.errors }">
+                      <div *ngIf="submitted2 && s.sellerName.errors" class="invalid-feedback">
+                        <div *ngIf="s.sellerName.errors.required">Name is required</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-2">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control w-75" placeholder="Enter phone number"
+                        formControlName="sellerPhone" maxlength="15"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.sellerPhone.errors }">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="sendOTPSeller()">OTP</button>
+                      <div *ngIf="submitted2 && s.sellerPhone.errors" class="invalid-feedback">
+                        <div *ngIf="s.sellerPhone.errors.required">Phone number is required</div>
+                        <div *ngIf="s.sellerPhone.errors.pattern">Phone number must be valid</div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-3" *ngIf="otpfield2">
+                      <div class="d-flex" style="flex-flow: wrap;">
+                        <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                          style="flex-grow:2">
+                        <button type="button" class="btn btn_bnr text-uppercase w-25"
+                          (click)="verifySeller()">Verify</button>
+                      </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12 contact_fm_col my-2">
+                      <input type="text" class="form-control" placeholder="Enter email address"
+                        formControlName="sellerEmail" [ngClass]="{ 'is-invalid': submitted2 && s.sellerEmail.errors }">
+                      <div *ngIf="submitted2 && s.sellerEmail.errors" class="invalid-feedback">
+                        <div *ngIf="s.sellerEmail.errors.required">Email is required</div>
+                        <div *ngIf="s.sellerEmail.errors.email">Email must be a valid email address</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Company address"
+                        rows="5" formControlName="sellerAddress"
+                        [ngClass]="{ 'is-invalid': submitted2 && s.sellerAddress.errors }"></textarea>
+                      <div *ngIf="submitted2 && s.sellerAddress.errors" class="invalid-feedback">
+                        <div *ngIf="s.sellerAddress.errors.required">Company Address is required</div>
+                      </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter message"
+                        rows="5" formControlName="sellerMessage"></textarea>
+                    </div>
+                    <div class="alert col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-3 text-center"
+                      *ngIf="sellerResponse==true">
+                      <strong>Success!</strong> Email has been sent. We will get back to you soon!
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2"
+                      *ngIf="!sellerResponse && applyButton">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-100" (click)="onSellerSubmit()">Submit</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact_fm_text my-2 form-group"
+                      *ngIf="!sellerResponse && !applyButton">
+                      <button class="btn btn_bnr_red text-uppercase mt-2 w-100" disabled>Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------------seller form end---------------------------------- -->
+    </div>
+  </div>
+</section>
+<!-- ------------------------------ads section end------------------------------ -->
+<!-- ---------------------------------achieved start--------------------------------- -->
+<section class="achieved_bg">
+  <div class="container">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">What Have We Achieved</h3>
+    <p class="mb-0">24x7 – 365 days Emergency Roadside Assistance 
+      Pan India Coverage including JK , LD and Andaman Nicobar Islands. </p>
+    <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+        <div class="achieved_card">
+          <div class="achieved_body text-center">
+            <img src="assets/img/Achieved1.png" class="img-fluid mb-2" alt="achieved icon">
+            <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="5000" data-speed="10500"></h4>
+            <p class="mb-0 text-center">Service Partners</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+        <div class="achieved_card">
+          <div class="achieved_body text-center">
+            <img src="assets/img/Achieved2.png" class="img-fluid mb-2" alt="achieved icon">
+            <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="25000" data-speed="10500"></h4>
+            <p class="mb-0 text-center">Pin Codes</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+        <div class="achieved_card">
+          <div class="achieved_body text-center">
+            <img src="assets/img/Achieved3.png" class="img-fluid mb-2" alt="achieved icon">
+            <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="115000" data-speed="10500"></h4>
+            <p class="mb-0 text-center">Vehicles Mobilised</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+        <div class="achieved_card">
+          <div class="achieved_body text-center">
+            <img src="assets/img/Achieved4.png" class="img-fluid mb-2" alt="achieved icon">
+            <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="5000" data-speed="10500"></h4>
+            <p class="mb-0 text-center">Subscribed Customers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ---------------------------------achieved end--------------------------------- -->
+<!-- ---------------------------------review start--------------------------------- -->
+<section class="review_bg">
+  <div class="container">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2 text-center">What Our Customers Say</h3>
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3">
+
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+        <div class="elfsight-app-2de121de-dda7-4344-b312-8f83fe31d420"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ---------------------------------review  end--------------------------------- -->
+<!-- ----------------------------------partner start---------------------------------- -->
+<section class="parner_bg">
+  <div class="container">
+    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 text-center">Policies sold on the following brands</h3>
+    <p class="mb-2 text-center">24x7 – 365 days Emergency Roadside Assistance
+      Pan India Coverage including JK , LD and Andaman Nicobar Islands.
+      <br>Applicable for Private Use Passenger vehicles aging less than 10 years.
+    </p>
+    <div class="row">
+      <div data-aos="fade-left"></div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3">
+        <owl-carousel-o [options]="brandOptions" id="blog" data-aos="fade-left" #owlCarPartner>
+          <ng-container *ngFor="let partner of partners">
+            <ng-template carouselSlide>
+              <div class="partner_card item">
+                <img [src]="partner.image" class="img-fluid" alt="partner_logo">
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+        <div class="partner_control mt-4">
+          <div class="control-left  customNavigation mr-3 " (click)="owlCarPartner.prev()">
+            <i class="fa fa-angle-left fa-2x control-icon-left font-weight-light" aria-hidden="true"></i>
+          </div>
+          <div class="control-right  customNavigation" (click)="owlCarPartner.next()">
+            <i class="fa fa-angle-right fa-2x control-icon-right font-weight-light" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ----------------------------------partner end---------------------------------- -->
+<!-- --------------------------------------3 ads start-------------------------------------- -->
+<section class="ads3_bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-3 ads3_col">
+        <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let card of card1; let isFirst = first" [class.active]="isFirst">
+              <div class="card_ads3">
+                <img [src]="card.image" class="img-fluid" width="100%" alt="ads img">
+                <div class="overlay_ads">
+                  <p class="mb-0"><small>{{card.accessory_type}}</small></p>
+                  <h4 class="mb-0 font-weight-bold">{{card.status}}</h4>
+                  <p class="mb-0 font-weight-bold">{{card.accessory}}</p>
+                  <!-- <button type="button" class="btn btn_bnr text-uppercase mt-2">Read More</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls1" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleControls1" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-3 ads3_col">
+        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let card of card2; let isFirst = first" [class.active]="isFirst">
+              <div class="card_ads3">
+                <img [src]="card.image" class="img-fluid" width="100%" alt="ads img">
+                <div class="overlay_ads">
+                  <p class="mb-0"><small>{{card.accessory_type}}</small></p>
+                  <h4 class="mb-0 font-weight-bold">{{card.status}}</h4>
+                  <p class="mb-0 font-weight-bold">{{card.accessory}}</p>
+                  <!-- <button type="button" class="btn btn_bnr text-uppercase mt-2">Read More</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls2" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleControls2" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-3 ads3_col">
+        <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let card of card3; let isFirst = first" [class.active]="isFirst">
+              <div class="card_ads3">
+                <img [src]="card.image" class="img-fluid" width="100%" alt="ads img">
+                <div class="overlay_ads">
+                  <p class="mb-0"><small>{{card.accessory_type}}</small></p>
+                  <h4 class="mb-0 font-weight-bold">{{card.status}}</h4>
+                  <p class="mb-0 font-weight-bold">{{card.accessory}}</p>
+                  <!-- <button type="button" class="btn btn_bnr text-uppercase mt-2">Read More</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls3" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleControls3" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- --------------------------------------3 ads end-------------------------------------- -->

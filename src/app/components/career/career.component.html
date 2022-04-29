@@ -1,0 +1,110 @@
+
+  <!-- ------------------------------abt start------------------------------ -->
+  <section class="inner_bnr" style="background-image: url('assets/img/inner-bnr10.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+          <h1 class="text-center">Career</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+              <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">Career</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------------abt end------------------------------ -->
+  <!-- ----------------------------------career start---------------------------------- -->
+  <section class="career_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-7 col-sm-12 col-12 creer_col_left">
+         <div class="row">
+           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3 career_card"
+           *ngFor="let job of jobList">
+            <a [routerLink]="['career-detail',job.id]">
+             <div class="card career_card border-0">
+              <img class="card-img-top" [src]="job.image" alt="Card image cap">                 
+               <div class="card-body">
+                 <h5 class="font-weight-bold car_hd">{{job.title}}</h5>
+                 <p class="font-weight-light mb-0">Experience: {{job.experience}}</p>
+                 <p class="font-weight-bold blr_color mb-0">Deadline: {{job.deadline | date}}</p>
+               </div>
+             </div>
+             </a>
+           </div>
+         </div>   
+        </div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12 creer_col_right">
+          <div class="creer_recent_card card border-0">
+            <div class="card-body">
+              <h4 class="font-weight-bold mb-4 blr_color hd_font">Apply For Job</h4>
+              <div class="job_form">
+                <form [formGroup]="userForm">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter your name" formControlName="name"
+                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control"  placeholder="Email address" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="d-flex" style="flex-flow: wrap;">
+                    <input type="text" class="form-control w-75" placeholder="Phone" formControlName="mobile"
+                    [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" style="flex-grow:2"/>
+                    <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="sendOTP()">OTP</button>
+                    </div>
+                  </div>
+                  <div class="form-group" *ngIf="otpfield">
+                    <div class="d-flex" style="flex-flow: wrap;">
+                      <input type="text" class="form-control w-75" placeholder="Enter OTP" formControlName="otp"
+                        style="flex-grow:2">
+                      <button type="button" class="btn btn_bnr text-uppercase w-25" (click)="Verify()">Verify</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" placeholder="Job Category" formControlName="career_category"
+                    [ngClass]="{ 'is-invalid': submitted && f.career_category.errors }">
+                      <option value="">Job Category</option>
+                      <option *ngFor="let job of jobList" [value]="job.id">{{job.title}}</option>
+                    </select>
+                    <div *ngIf="submitted && f.career_category.errors" class="invalid-feedback">
+                      <div *ngIf="f.career_category.errors.required">Select a job</div>
+                    </div>
+                  </div>
+                   <div class="form-group mt-3">
+                    <input type="file" class="form-control-file" (change)="onFileChanged($event)"
+                    [ngClass]="{ 'is-invalid': submitted && f.file.errors }">
+                    <div *ngIf="submitted && f.file.errors" class="invalid-feedback">
+                      <div *ngIf="f.file.errors.required">Insert CV/Resume</div>
+                    </div>
+                  </div>
+                   <div class="form-group" >
+                     <a class="btn btn_bnr_red my-3 my-md-3 w-100 text-white" role="button" *ngIf="!response && applyButton"
+                     (click)="onSubmit()">Apply Now</a>
+                     <button class="btn btn_bnr_red my-3 my-md-3 w-100 text-white" role="button" *ngIf="!response && !applyButton"
+                    disabled>Apply Now</button>
+                     <div class="alert my-3 my-md-3 w-100 text-center"
+                      *ngIf="response==true">
+                      <strong>Applied Successfully</strong> 
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ----------------------------------career end---------------------------------- -->

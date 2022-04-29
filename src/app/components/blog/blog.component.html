@@ -1,0 +1,40 @@
+
+    <!-- ------------------------------blog start------------------------------ -->
+    <section class="inner_bnr" style="background-image: url('assets/img/inner-bnr2.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+            <h1 class="text-center">Our News & Blogs</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">News & Blogs</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ------------------------------blog end------------------------------ -->
+    <!-------------------------------blog start------------------------------->
+    <section class="blog_bg innr_blog">
+      <img src="assets/img/road-mark.png" class="img-fluid tire_grip" alt="grip image">
+      <div class="container">
+        <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">News And  Blogs</h3>
+        <div class="row">
+          <div class="blog_col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-3 my-md-4"
+          *ngFor="let blog of blogs">
+            <a [routerLink]="['blog-detail',blog.id]">
+            <div class="blog_card card border-0 bg-transparent">
+              <img [src]="blog.image" class="img-fluid blog_img" alt="blog img">
+              <div class="card-body text-center">
+                <p class="mb-0">{{blog.main_title}}</p>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------------blog end------------------------------->
+    

@@ -1,0 +1,150 @@
+
+  <!-- ------------------------------abt start------------------------------ -->
+  <section class="inner_bnr" style="background-image: url('assets/img/inner-bnr7.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+          <h1 class="text-center">About Us</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+              <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------------abt end------------------------------ -->
+ <!-- --------------------------------about start-------------------------------- -->
+  <section class="abt_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 abt_col">
+          <div class="abt_card card border-0">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 ab_img_col text-center my-3">
+                  <img src="assets/img/abt_img4.jpg" class="img-fluid abt_img" alt="img abt" data-aos="zoom-in-up">
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ab_text_col my-3">
+                    <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2 text-white">About Us</h3>
+                  <p class="text-white">Our story began in 2016. We started on road repair services, making every best possible effort to make the vehicle roadworthy as soon as possible. We offered 24*7 helpline, breakdown services, and roadside assistance across India for those who want to have peace of mind from unseen breakdowns that occur in their vehicle. </p>
+                  <p class="mb-0 text-white">Today we are a team of well trained alarm centre executives who are immediate and considerate in approach and are backed with world class tools and technology. We have a dedicated 24 x 7 Service Team for all your service and support requirements.</p>
+                  <p class="mb-0 text-white">Along with Roadside Assistance we are now expanded to Aviation Service ,Trading and distribution Business</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- --------------------------------about end-------------------------------- -->
+<!-- ---------------------------------achieved start--------------------------------- -->
+  <section class="achieved_bg" style="margin-top:80px;">
+    <div class="container">
+      <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">What Have We Achieved</h3>
+      <p class="mb-0">24x7 – 365 days Emergency Roadside Assistance Pan India Coverage including JK , LD and Andaman Nicobar Islands.
+      </p>
+      <div class="row">
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+          <div class="achieved_card">
+            <div class="achieved_body text-center">
+              <img src="assets/img/Achieved1.png" class="img-fluid mb-2" alt="achieved icon">
+              <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="5000" data-speed="10500"></h4>
+              <p class="mb-0 text-center">Service Partners</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+          <div class="achieved_card">
+            <div class="achieved_body text-center">
+              <img src="assets/img/Achieved2.png" class="img-fluid mb-2" alt="achieved icon">
+              <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="25000" data-speed="10500"></h4>
+              <p class="mb-0 text-center">Pin Codes</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+          <div class="achieved_card">
+            <div class="achieved_body text-center">
+              <img src="assets/img/Achieved3.png" class="img-fluid mb-2" alt="achieved icon">
+              <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="115000" data-speed="10500"></h4>
+              <p class="mb-0 text-center">Vehicles Mobilised</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 achieved_col my-3">
+          <div class="achieved_card">
+            <div class="achieved_body text-center">
+              <img src="assets/img/Achieved4.png" class="img-fluid mb-2" alt="achieved icon">
+              <h4 class="font-weight-bold red_clr mb-0 timer count-number" data-to="5000" data-speed="10500"></h4>
+              <p class="mb-0 text-center">Subscribed Customers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ---------------------------------achieved end--------------------------------- -->
+
+  <!-- ----------------------------------team start---------------------------------- -->
+  <section class="team_bg">
+    <div class="container">
+      <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2 text-center">Our Team</h3>
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 my-3 team_col"
+        *ngFor="let item of team">
+          <div class="card team_col">
+            <img src="{{item.image}}" class="img-fluid">
+            <div class="card-body text-center">
+              <p class="font-weight-light mb-0 text-center">{{item.designation}}</p>
+              <h5 class="font-weight-bold mb-0">{{item.name}}</h5>
+                <div class="social_team d-flex mt-2 justify-content-center">                    
+                 <a href="{{item.social1}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                 <a href="{{item.social2}}" target="_blank"><i class="fa fa-twitter ml-2" aria-hidden="true"></i></a>
+                 <a href="{{item.social3}}" target="_blank"><i class="fa fa-linkedin ml-2" aria-hidden="true"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- ----------------------------------team end---------------------------------- -->
+
+ 
+  <!-- ----------------------------------partner start---------------------------------- -->
+  <section class="parner_bg">
+    <div class="container">
+      <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 text-center">Policies sold on the following brands
+      </h3>
+      <p class="mb-2 text-center">24x7 – 365 days Emergency Roadside Assistance Pan India Coverage including JK , LD and Andaman Nicobar Islands.
+        <br>Applicable for Private Use Passenger vehicles aging less than 10 years.
+      </p>
+      <div class="row">
+        <div data-aos="fade-left"></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3">
+          <owl-carousel-o [options]="brandOptions" id="blog" data-aos="fade-left" #owlCarPartner>
+            <ng-container *ngFor="let partner of partners">
+              <ng-template carouselSlide>
+                <div class="partner_card item">
+                  <img [src]="partner.image" class="img-fluid" alt="partner_logo">
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+          <div class="partner_control mt-4">
+            <div class="control-left  customNavigation mr-3 " (click)="owlCarPartner.prev()">
+              <i class="fa fa-angle-left fa-2x control-icon-left font-weight-light" aria-hidden="true"></i>
+            </div>
+            <div class="control-right  customNavigation" (click)="owlCarPartner.next()">
+              <i class="fa fa-angle-right fa-2x control-icon-right font-weight-light" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ----------------------------------partner end---------------------------------- -->

@@ -1,0 +1,138 @@
+<!-- ------------------------------blog start------------------------------ -->
+<section class="inner_bnr" style="background-image: url('assets/img/inner-bnr2.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 inner_bnr_col my-3">
+        <h1 class="text-center">Blog detail</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent bread_crumb_custom mb-0 justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="blue_clr text-white">Home</a></li>
+            <li class="breadcrumb-item"><a routerLink="/blog" class="blue_clr text-white">News & Blogs</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Blogs Detail</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ------------------------------blog end------------------------------ -->
+<!-------------------------------blog start------------------------------->
+<section class="blog_bg innr_blog">
+  <img src="assets/img/road-mark.png" class="img-fluid tire_grip" alt="grip image">
+  <div class="container">
+    <div class="row">
+      <div class="blog_col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 my-3 my-md-4 blog_detail">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="cms_hd hd_font mb-lg-3 mb-md-3 mb-2">{{blog?.main_title}}</h3>
+            <img [src]="blog?.image" class="img-fluid my-3" width="100%" alt="blog detail">
+            <h4 class="font-weight-bold hd_font">{{blog?.title}}</h4>
+            <p style="white-space: pre-line;">{{blog?.description}}</p>
+            <p></p>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3" *ngIf="url!=null">
+              <div class="card">
+                <div class="card-body">
+                  <iframe width="100%" height="315" [src]='safeURL' title="YouTube video player" 
+                  allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-3" *ngIf="url!=null">
+              <div class="card">
+                <div class="card-body">
+                  <iframe width="100%" height="315" [src]='safeURL' title="YouTube video player" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div> -->
+            <h4 class="font-weight-bold">{{blog?.sub_title}}</h4>
+            <ul class="pl-3">
+              <li *ngIf="blog?.p1">{{blog.p1}}</li>
+              <li *ngIf="blog?.p2">{{blog.p2}}</li>
+              <li *ngIf="blog?.p3">{{blog.p3}}</li>
+              <li *ngIf="blog?.p4">{{blog.p4}}</li>
+              <!-- <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</li> -->
+            </ul>
+            <h6 class="font-weight-bold my-3 ftr_sub_hd">Share this article:</h6>
+            <share-buttons [theme]="'outline'" [include]="['facebook','twitter','linkedin','whatsapp']" [show]="4"
+              [showText]="true" [url]="'shareURL'" [autoSetMeta]="false">
+            </share-buttons>
+          </div>
+        </div>
+      </div>
+      <div class="blog_col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 my-3 my-md-4">
+        <div class="card detail_bg_right">
+          <div class="card-body">
+            <h4 class="font-weight-bold hd_font mb-3">Recent Post</h4>
+            <div *ngFor="let item of reversedBlog;let i=index" (click)="reload()">
+              <a [routerLink]="['/blog-detail',item.id]" *ngIf="i<5">
+                <div class="media mb-3">
+                  <img [src]="item.image" class="img-fluid mr-3 img_small" alt="post image" >
+                  <div class="media-body">
+                    <p class="font-weight-bold text-left">{{item.main_title}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- <a href="">
+                <div class="media mb-3">
+                  <img src="assets/img/blg-right2.jpg" class="img-fluid mr-3" alt="post image">
+                  <div class="media-body">
+                    <p class="font-weight-bold">App Promotes Sales & Profits In It Solutions</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="media mb-3">
+                  <img src="assets/img/blg-right3.jpg" class="img-fluid mr-3" alt="post image">
+                  <div class="media-body">
+                    <p class="font-weight-bold">App Promotes Sales & Profits In It Solutions</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="media mb-3">
+                  <img src="assets/img/blg-right4.jpg" class="img-fluid mr-3" alt="post image">
+                  <div class="media-body">
+                    <p class="font-weight-bold">App Promotes Sales & Profits In It Solutions</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="media mb-3">
+                  <img src="assets/img/blg-right5.jpg" class="img-fluid mr-3" alt="post image">
+                  <div class="media-body">
+                    <p class="font-weight-bold">App Promotes Sales & Profits In It Solutions</p>
+                  </div>
+                </div>
+              </a>
+               -->
+          </div>
+        </div>
+        <!-- <div class="card detail_bg_right mt-3">
+          <div class="card-body">
+            <h4 class="font-weight-bold hd_font mb-3">Categories</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item px-0"><i class="fa fa-angle-right mr-2" aria-hidden="true"></i>Engine
+                Diagnostics</li>
+              <li class="list-group-item px-0"><i class="fa fa-angle-right mr-2" aria-hidden="true"></i>Vehicles Damaged
+              </li>
+              <li class="list-group-item px-0"><i class="fa fa-angle-right mr-2" aria-hidden="true"></i>Air Conditioning
+                Evac</li>
+              <li class="list-group-item px-0"><i class="fa fa-angle-right mr-2" aria-hidden="true"></i>Anti Lock Brake
+                Service</li>
+              <li class="list-group-item px-0"><i class="fa fa-angle-right mr-2" aria-hidden="true"></i>Computer
+                Diagnostics</li>
+              <li class="list-group-item px-0"><i class="fa fa-angle-right mr-2" aria-hidden="true"></i>Performance
+                Upgrades</li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-------------------------------blog end------------------------------->
